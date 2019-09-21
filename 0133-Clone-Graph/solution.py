@@ -33,8 +33,7 @@ class Solution:
         # SOLUTION 2 - Iterative Depth First Traversal
         # O(n) Time, O(n) Space
 
-        # clone, stack = {}, [node]
-        # clone[node] = Node(node.val, [])
+        # clone, stack = {node: Node(node.val, [])}, [node]
 
         # while stack:
         #     vertex = stack.pop()
@@ -52,9 +51,7 @@ class Solution:
 
         from collections import deque
 
-        clone, queue = {}, deque()
-        queue.append(node)
-        clone[node] = Node(node.val, [])
+        clone, queue = {node: Node(node.val, [])}, deque([node])
 
         while queue:
             vertex = queue.popleft()
